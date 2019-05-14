@@ -1,0 +1,66 @@
+ 
+												Possible Assumptions: N/A
+
+Note:
+	1. In the Agent Detail Page: the requirement is "Retrieve all Agent Details by agent's INT ID", since the agent's ID is a unique id/number, so the returned value can be 1 row (if found) or 0 row (not found) only. 
+
+	2. In the Agent's Customer List View Page, Ability to Add New Customer endpoint should given an Agent' ID as a param to be able to create new customer. 
+
+	3. In the Agent's Customer List View Page, Ability to Delete Existing Customer endpoint should given a customer id as a param to be able to delete customer. 
+
+	4. In the Agent's Customer Detail Page, Return all customer data from our system endpoint, a page number, pagesize, a list of returned columns will have to be specified, otherwise the default value will be use. 
+	Page = 0, 1, 2, 3 ... 
+	pagesize = [10, 50] 
+	columns = _id, company, guid 
+
+	5. In the Agent's Customer Detail Page, Provide ability to Update Customer Information endpoint should given a customer's ID as a param to be able to update.
+
+
+Install Instruction: 
+
+	1. Install apache on your local window computer, (I use XAMPP)
+	2. Test your localhost url from your browser.
+	3. Copy my "something" folder into your htdocs folder
+	4. Create a databse from test.sql, it contains database structure and data	
+	5. change app.ini which is contains database config infos with you user/pass/host/dbname
+	
+API URLS
+
+1. Agent List Page
+	Return List of all Agents
+		Method: GET
+		Params: http://localhost/something/apis/agents.php?fields={"method":"list","page":0}
+		default pagesize = 10
+	Ability to Add New Agent
+		Method: POST
+		Params: http://localhost/something/apis/agents.php?fields={"method":"add","name":"uyen","address":"123","something":"something value"}
+
+
+2. Agent Detail Page
+	Retrieve all Agent Details by agent's INT ID
+		Method: GET
+		Params: http://localhost/something/apis/agentdetails.php?fields={"method":"getAgentByID","id":0}
+	Update Any/All Fields by Agent's INT ID
+		Method: POST
+		Params: http://localhost/something/apis/agentdetails.php?fields={"method":"updateAgentByID","id":0,"name":"uyen"}
+
+
+3. Agent's Customer List View Page
+	List all customers associated with a given Agent's INT ID
+		Method: GET
+		Params: http://localhost/something/apis/agentcustomer.php?fields={"method":"getCustomerByAgentID","id":101}
+	Ability to Add New Customer
+		Method: POST
+		Params: http://localhost/something/apis/agentcustomer.php?fields={"method":"addCustomer","id":101 , "name"=> "my new customer"}
+	Ability to Delete Existing Customer
+		Method: POST
+		Params: http://localhost/something/apis/agentcustomer.php?fields={"method":"removeCustomer","id":101 }
+
+
+4. Agent's Customer Detail Page
+	Return all customer data from our system.
+		Method: GET
+		Params: http://localhost/something/apis/agentcustomerdetail.php?fields={"method":"listCustomer","page":0, "pagesize":10,"columns":'_id,company'}
+	Provide ability to Update Customer Information
+		Method: POST
+		Params: http://localhost/something/apis/agentcustomerdetail.php?fields={"method":"updateCustomerById","id":0,"company":"uyen"}
