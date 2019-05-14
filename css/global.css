@@ -1,1 +1,71 @@
-.
+/* my little stuff.  any non-bootstrap css will go here. */
+
+*:focus { outline: none!important; }
+TEXTAREA {resize: none;}
+
+.disabled {-moz-opacity: 0.4; opacity: .40; filter: alpha(opacity = 40); cursor: default!important;}
+.bold { font-weight:bold; }
+.pointer { cursor:pointer; }
+.ellipsis { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; -o-text-overflow: ellipsis; -moz-binding: url('bindings.xml#ellipsis');}
+.nowrap { white-space: nowrap; }
+.xsmall {font-size:75%;}
+
+.topmargin {margin-top: 10px!important;}
+.bottommargin {margin-bottom: 10px!important;}
+.leftmargin {margin-left: 10px!important;}
+.rightmargin {margin-right: 10px!important;}
+
+.bigtopmargin {margin-top: 20px!important;}
+.bigbottommargin {margin-bottom: 20px!important;}
+.bigleftmargin {margin-left: 20px!important;}
+.bigrightmargin {margin-right: 20px!important;}
+
+SPAN.link {cursor:pointer; color: #337ab7;}
+
+.charcount {font-size: 12px; color: #999;}
+
+.tblpadded5 {table-layout:fixed;}
+.tblpadded10 {table-layout:fixed;}
+.tblpadded15 {table-layout:fixed;}
+
+.tblpadded5 > tbody > tr > td {padding:5px!important; color: #818181;}
+.tblpadded10 > tbody > tr > td {padding:10px!important; color: #818181;}
+.tblpadded15 > tbody > tr > td {padding:15px!important; color: #818181;}
+
+.tblpadded5 > tbody > tr:nth-last-child(n+2) > td {border-bottom: 1px solid #e9f2f9;}
+.tblpadded10 > tbody > tr:nth-last-child(n+2) > td {border-bottom: 1px solid #e9f2f9;}
+.tblpadded15 > tbody > tr:nth-last-child(n+2) > td {border-bottom: 1px solid #e9f2f9;}
+
+/* Friggin MS */
+.MsoNormal span {
+	font-size: inherit!important;
+}
+
+.color-white { color: #ffffff; }
+.color-primary { color: #337ab7; }
+
+.color-success { color: #5cb85c; }
+.color-info { color: #5bc0de; }
+.color-warning { color: #f0ad4e; }
+.color-danger { color: #d9534f; }
+
+.color-facebook, .color-fbapi { color: #3b5998; }
+.color-twitter { color: #55acee; }
+.color-linkedin { color: #007bb6; }
+.color-googleplus { color: #db4936; }
+.color-googleplaces { color: #e24620; }
+.color-youtube { color: #e42b22; }
+.color-wordpress { color: #464646; }
+.color-wordpressorg { color: #21759b; }
+.color-pinterest { color: #bd2026; }
+.color-blogger { color: #f79238; }
+.color-foursquare { color: #ef4977; }
+.color-rss { color: #f58432; }
+.color-yelp { color: #ff0000; }
+.color-tumblr { color: #37465d; }
+.color-misc { color: #337ab7; }
+.color-instagram { color: #8d5241; }
+
+.nudgeitem {cursor: pointer; margin: 10px 0px; background-color: #fff; border: 3px solid #fff; border-radius: 6px; padding: 10px;}
+.nudgeitem:hover {background-color:#b8f4ff;border:3px solid #5b9bd5; border-radius:6px;}
+
